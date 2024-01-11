@@ -6,6 +6,15 @@ The pipeline requires output from [nf-core/ampliseq](https://nf-co.re/ampliseq) 
 
 For example, multiple variable regions of the 16S rRNA gene were sequenced with various primers and need to be unified. This leads to one unified abundance and taxonomy profile over all variable regions.
 
+## Pipeline summary
+
+- The pipeline follows recommendations of the [Sidle documentation](https://q2-sidle.readthedocs.io/en/latest/index.html)
+- Import of all files in [QIIME2](https://qiime2.org/)
+- Database preparation (region extractions, reconstruction of taxonomies, truncation)
+- Input amplicon sequence preparation (truncation to region length)
+- Reconstruction of abundance table and taxonomic information
+- Phylogenetic tree (sequence reconstitution, phylogenetic placement)
+
 ## Software requirement
 
 - Java
@@ -14,7 +23,10 @@ For example, multiple variable regions of the 16S rRNA gene were sequenced with 
 
 ### Input data
 
-Information to computed abundances, sequences, primers, and expected length, for each sequenced region. Pipesidle was made for output of [nf-core/ampliseq](https://nf-co.re/ampliseq), but should also accept any other pipeline output in correct format.
+Information to computed abundances, sequences, primers, and expected length, for each sequenced region. 
+
+Pipesidle was made for output of [nf-core/ampliseq](https://nf-co.re/ampliseq) (run the pipeline for each region/primer pair separately, potentially use "[--illumina_pe_its](https://nf-co.re/ampliseq/2.7.1/parameters#illumina_pe_its) [--cutadapt_min_overlap](https://nf-co.re/ampliseq/2.7.1/parameters#cutadapt_min_overlap) 10"), but should also accept any other pipeline output in correct format.
+
 The information has to be provided in a tab-separated sample sheet via `--input`, one row per sequenced region.
 
 | Parameter     | Description                      |
