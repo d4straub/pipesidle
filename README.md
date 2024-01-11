@@ -67,7 +67,7 @@ Alternatively, SILVA 128 has also all required files.
 As example with the above greengenes 13_8 reference database.
 
 ```bash
-NXF_VER=23.10.0 nextflow run d4straub/pipesidle -r master \
+NXF_VER=23.10.0 nextflow run d4straub/pipesidle \
   -profile singularity
   --input 'samplesheet.tsv' \
   --db_sequences 'gg_13_8_otus_rep_set_99_otus.fasta' \
