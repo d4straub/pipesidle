@@ -1,3 +1,6 @@
+> [!NOTE]
+> The functions of this workflow were added to [nf-core/ampliseq](https://nf-co.re/ampliseq) in version [2.9.0](https://github.com/nf-core/ampliseq/releases/tag/2.9.0).
+
 # pipesidle
 
 Multipe region amplicon sequencing analysis with SMURF via Sidle in QIIME2.
